@@ -6,117 +6,12 @@ import (
 	"testing"
 )
 
-// func str(i int) string {
-// 	return fmt.Sprintf("test string %d", i)
-// }
-
-// func strB(i int) string {
-// 	return fmt.Sprintf("test-string %d", i)
-// }
-
 func str(i int) string {
 	return fmt.Sprintf("%7d ", i)
 }
 
 func strB(i int) string {
 	return fmt.Sprintf("%7d-", i)
-}
-
-func BenchmarkCacheMiss(b *testing.B) {
-	for _, loadFactor := range []float64{0.2, 0.6, 1} {
-		for _, size := range []int{1000, 10000, 100000, 1000000} {
-			b.Run(fmt.Sprintf("Size=%d_Load=%.1f", size, loadFactor), func(b *testing.B) {
-				numItems := int(float64(size) * loadFactor)
-				cache := make(map[string]int, numItems)
-				hitKeys := make([]string, numItems)
-
-				for i := range numItems {
-					cache[str(i)] = i
-					hitKeys[i] = strB(i)
-				}
-
-				rand.Shuffle(len(hitKeys), func(i, j int) {
-					hitKeys[i], hitKeys[j] = hitKeys[j], hitKeys[i]
-				})
-
-				b.ResetTimer()
-
-				for i := 0; i < b.N; i++ {
-					idx := i % numItems
-					key := hitKeys[idx]
-					_, found := cache[key]
-					if found {
-						b.Fatalf("Key %s should not be found", key)
-					}
-				}
-			})
-		}
-	}
-}
-
-var sum uint64
-
-func BenchmarkCacheHit(b *testing.B) {
-	for _, loadFactor := range []float64{0.2, 0.6, 1} {
-		for _, size := range []int{1000, 10000, 100000, 1000000} {
-			b.Run(fmt.Sprintf("Size=%d_Load=%.1f", size, loadFactor), func(b *testing.B) {
-				numItems := int(float64(size) * loadFactor)
-				cache := make(map[string]int, numItems)
-				hitKeys := make([]string, numItems)
-
-				for i := range numItems {
-					cache[str(i)] = i
-					hitKeys[i] = str(i)
-				}
-
-				rand.Shuffle(len(hitKeys), func(i, j int) {
-					hitKeys[i], hitKeys[j] = hitKeys[j], hitKeys[i]
-				})
-
-				b.ResetTimer()
-
-				for i := 0; i < b.N; i++ {
-					idx := i % numItems
-					key := hitKeys[idx]
-					_, found := cache[key]
-					if !found {
-						b.Fatalf("Key %s should be found", key)
-					}
-				}
-			})
-		}
-	}
-}
-
-func BenchmarkCacheAddDel(b *testing.B) {
-	for _, loadFactor := range []float64{0.2, 0.6, 1} {
-		for _, size := range []int{1000, 10000, 100000, 1000000} {
-			b.Run(fmt.Sprintf("Size=%d_Load=%.1f", size, loadFactor), func(b *testing.B) {
-				numItems := int(float64(size) * loadFactor)
-				cache := make(map[string]int, numItems)
-				hitKeys := make([]string, numItems)
-
-				for i := range numItems {
-					cache[str(i)] = i
-					hitKeys[i] = str(i)
-				}
-
-				rand.Shuffle(len(hitKeys), func(i, j int) {
-					hitKeys[i], hitKeys[j] = hitKeys[j], hitKeys[i]
-				})
-
-				key := str(numItems)
-				val := numItems
-
-				b.ResetTimer()
-
-				for i := 0; i < b.N; i++ {
-					cache[key] = val
-					delete(cache, key)
-				}
-			})
-		}
-	}
 }
 
 const fixedSeed1 = 12345
