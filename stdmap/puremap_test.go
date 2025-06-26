@@ -20,12 +20,7 @@ const fixedSeed2 = 76890
 var cacheSizes = []int{1, 10, 100, 1000, 10000, 100000, 1000000, 10000000}
 
 func BenchmarkCache2Hit(b *testing.B) {
-	var size int
-	for i := range cacheSizes {
-		if cacheSizes[i] > size {
-			size = cacheSizes[i]
-		}
-	}
+	size := cacheSizes[len(cacheSizes)-1]
 	ss := make([]string, size)
 	us := make([]string, size)
 	for i := range size {
@@ -57,12 +52,7 @@ func BenchmarkCache2Hit(b *testing.B) {
 }
 
 func BenchmarkCache2Miss(b *testing.B) {
-	var size int
-	for i := range cacheSizes {
-		if cacheSizes[i] > size {
-			size = cacheSizes[i]
-		}
-	}
+	size := cacheSizes[len(cacheSizes)-1]
 	ss := make([]string, size)
 	us := make([]string, size)
 	for i := range size {
