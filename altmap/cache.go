@@ -55,12 +55,8 @@ func (c *Cache) Get(key string) (value int, ok bool) {
 	idx := H1(hash) & (tableSize - 1)
 	offset := uint32(idx) * sizeGroup
 	basePtr := unsafe.Pointer(unsafe.SliceData(t.groups[:]))
-	//k := uint(0x7f7f_7f7f_7f7f_7f7f)
 	for {
 		g := (*Group)(unsafe.Add(basePtr, offset))
-		// h := uint(g.header) ^ uint(pattern)
-		// v := ((h & k) + k) | h | k
-		// for set := Set(^v); !set.Empty(); set = set.Next() {
 		for set := g.header.Find(pattern); !set.Empty(); set = set.Next() {
 			if item := &g.item[set.Pos()&(nItems-1)]; item.key == key {
 				return item.value, true
@@ -70,9 +66,8 @@ func (c *Cache) Get(key string) (value int, ok bool) {
 			return
 		}
 		// to avoid a product by groupSize or a modulo
-		if pos += sizeGroup; pos >= sizeGroups {
-			pos -= sizeGroups
-		}
+		// pos never reach sizeGroups
+		pos += sizeGroup
 		if offset += pos; offset >= sizeGroups {
 			offset -= sizeGroups
 		}

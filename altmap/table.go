@@ -88,9 +88,8 @@ func (t *table) get(key *string, hash uint) (value int, ok bool) {
 			return
 		}
 		// to avoid a product by groupSize or a modulo
-		if pos += sizeGroup; pos >= sizeGroups {
-			pos -= sizeGroups
-		}
+		// pos never reach sizeGroups
+		pos += sizeGroup
 		if offset += pos; offset >= sizeGroups {
 			offset -= sizeGroups
 		}
@@ -116,9 +115,8 @@ func (t *table) swap(key string, value int, hash uint) (oldValue int, ok bool) {
 			return
 		}
 		// to avoid a product by groupSize or a modulo
-		if pos += sizeGroup; pos >= sizeGroups {
-			pos -= sizeGroups
-		}
+		// pos never reach sizeGroups
+		pos += sizeGroup
 		if offset += pos; offset >= sizeGroups {
 			offset -= sizeGroups
 		}
@@ -145,9 +143,8 @@ func (t *table) add(key *string, value int, hash uint) bool {
 			return true
 		}
 		// to avoid a product by groupSize or a modulo
-		if pos += sizeGroup; pos >= sizeGroups {
-			pos -= sizeGroups
-		}
+		// pos never reach sizeGroups
+		pos += sizeGroup
 		if offset += pos; offset >= sizeGroups {
 			offset -= sizeGroups
 		}
@@ -223,9 +220,8 @@ func (t *table) del(key *string, hash uint) (rehash bool, ok bool) {
 			return false, false
 		}
 		// to avoid a product by groupSize or a modulo
-		if pos += sizeGroup; pos >= sizeGroups {
-			pos -= sizeGroups
-		}
+		// pos never reach sizeGroups
+		pos += sizeGroup
 		if offset += pos; offset >= sizeGroups {
 			offset -= sizeGroups
 		}
