@@ -1,0 +1,220 @@
+goos: linux
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+BenchmarkCache2Hit/_______1-12         	190770721	         6.276 ns/op
+BenchmarkCache2Hit/______10-12         	191138272	         6.305 ns/op
+BenchmarkCache2Hit/_____100-12         	187651867	         6.435 ns/op
+BenchmarkCache2Hit/____1000-12         	182908069	         6.599 ns/op
+BenchmarkCache2Hit/___10000-12         	166637356	         7.235 ns/op
+BenchmarkCache2Hit/__100000-12         	100000000	        10.35 ns/op
+BenchmarkCache2Hit/_1000000-12         	37566720	        31.95 ns/op
+BenchmarkCache2Hit/10000000-12         	27423829	        44.34 ns/op
+BenchmarkCache2Miss/_______1-12        	215431324	         5.587 ns/op
+BenchmarkCache2Miss/______10-12        	215820853	         5.559 ns/op
+BenchmarkCache2Miss/_____100-12        	211238126	         5.679 ns/op
+BenchmarkCache2Miss/____1000-12        	195292119	         6.215 ns/op
+BenchmarkCache2Miss/___10000-12        	149940841	         8.029 ns/op
+BenchmarkCache2Miss/__100000-12        	63165945	        18.69 ns/op
+BenchmarkCache2Miss/_1000000-12        	55436522	        21.56 ns/op
+BenchmarkCache2Miss/10000000-12        	34181548	        34.50 ns/op
+PASS
+ok  	fastmap/map	37.570s
+goos: linux
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+BenchmarkCache2Hit/_______1-12         	190753370	         6.278 ns/op
+BenchmarkCache2Hit/______10-12         	190209865	         6.268 ns/op
+BenchmarkCache2Hit/_____100-12         	189636652	         6.400 ns/op
+BenchmarkCache2Hit/____1000-12         	181673271	         6.551 ns/op
+BenchmarkCache2Hit/___10000-12         	165646806	         7.306 ns/op
+BenchmarkCache2Hit/__100000-12         	100000000	        10.37 ns/op
+BenchmarkCache2Hit/_1000000-12         	37604982	        31.62 ns/op
+BenchmarkCache2Hit/10000000-12         	27557308	        43.96 ns/op
+BenchmarkCache2Miss/_______1-12        	215436064	         5.564 ns/op
+BenchmarkCache2Miss/______10-12        	215887699	         5.589 ns/op
+BenchmarkCache2Miss/_____100-12        	214875060	         5.680 ns/op
+BenchmarkCache2Miss/____1000-12        	192018116	         6.304 ns/op
+BenchmarkCache2Miss/___10000-12        	154659636	         8.014 ns/op
+BenchmarkCache2Miss/__100000-12        	62781867	        18.91 ns/op
+BenchmarkCache2Miss/_1000000-12        	54644158	        21.68 ns/op
+BenchmarkCache2Miss/10000000-12        	34666032	        35.37 ns/op
+PASS
+ok  	fastmap/map	37.661s
+goos: linux
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+BenchmarkCache2Hit/_______1-12         	189854631	         6.290 ns/op
+BenchmarkCache2Hit/______10-12         	190710478	         6.274 ns/op
+BenchmarkCache2Hit/_____100-12         	191376039	         6.311 ns/op
+BenchmarkCache2Hit/____1000-12         	182973228	         6.560 ns/op
+BenchmarkCache2Hit/___10000-12         	165196338	         7.253 ns/op
+BenchmarkCache2Hit/__100000-12         	100000000	        10.67 ns/op
+BenchmarkCache2Hit/_1000000-12         	37473980	        31.75 ns/op
+BenchmarkCache2Hit/10000000-12         	27349251	        44.31 ns/op
+BenchmarkCache2Miss/_______1-12        	215957234	         5.561 ns/op
+BenchmarkCache2Miss/______10-12        	215603281	         5.574 ns/op
+BenchmarkCache2Miss/_____100-12        	210854968	         5.679 ns/op
+BenchmarkCache2Miss/____1000-12        	193127869	         6.184 ns/op
+BenchmarkCache2Miss/___10000-12        	148779512	         7.938 ns/op
+BenchmarkCache2Miss/__100000-12        	64144407	        18.85 ns/op
+BenchmarkCache2Miss/_1000000-12        	55219653	        21.17 ns/op
+BenchmarkCache2Miss/10000000-12        	34546072	        34.69 ns/op
+PASS
+ok  	fastmap/map	37.604s
+goos: linux
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+BenchmarkCache2Hit/_______1-12         	191063524	         6.284 ns/op
+BenchmarkCache2Hit/______10-12         	189976965	         6.278 ns/op
+BenchmarkCache2Hit/_____100-12         	188138923	         6.268 ns/op
+BenchmarkCache2Hit/____1000-12         	182612090	         6.589 ns/op
+BenchmarkCache2Hit/___10000-12         	166353272	         7.258 ns/op
+BenchmarkCache2Hit/__100000-12         	100000000	        10.41 ns/op
+BenchmarkCache2Hit/_1000000-12         	38345791	        31.07 ns/op
+BenchmarkCache2Hit/10000000-12         	26990382	        43.73 ns/op
+BenchmarkCache2Miss/_______1-12        	215033656	         5.556 ns/op
+BenchmarkCache2Miss/______10-12        	214411035	         5.571 ns/op
+BenchmarkCache2Miss/_____100-12        	214833154	         5.576 ns/op
+BenchmarkCache2Miss/____1000-12        	191444797	         6.225 ns/op
+BenchmarkCache2Miss/___10000-12        	150255013	         7.852 ns/op
+BenchmarkCache2Miss/__100000-12        	64831018	        18.81 ns/op
+BenchmarkCache2Miss/_1000000-12        	54689942	        21.31 ns/op
+BenchmarkCache2Miss/10000000-12        	34746530	        34.61 ns/op
+PASS
+ok  	fastmap/map	37.485s
+goos: linux
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+BenchmarkCache2Hit/_______1-12         	190163673	         6.281 ns/op
+BenchmarkCache2Hit/______10-12         	189722719	         6.265 ns/op
+BenchmarkCache2Hit/_____100-12         	181410015	         6.265 ns/op
+BenchmarkCache2Hit/____1000-12         	180244146	         6.667 ns/op
+BenchmarkCache2Hit/___10000-12         	165820189	         7.271 ns/op
+BenchmarkCache2Hit/__100000-12         	100000000	        10.51 ns/op
+BenchmarkCache2Hit/_1000000-12         	38386269	        31.00 ns/op
+BenchmarkCache2Hit/10000000-12         	26578514	        44.63 ns/op
+BenchmarkCache2Miss/_______1-12        	215429499	         5.578 ns/op
+BenchmarkCache2Miss/______10-12        	215874344	         5.561 ns/op
+BenchmarkCache2Miss/_____100-12        	215002839	         5.681 ns/op
+BenchmarkCache2Miss/____1000-12        	193828978	         6.180 ns/op
+BenchmarkCache2Miss/___10000-12        	151451961	         7.788 ns/op
+BenchmarkCache2Miss/__100000-12        	62377386	        19.02 ns/op
+BenchmarkCache2Miss/_1000000-12        	55712444	        21.64 ns/op
+BenchmarkCache2Miss/10000000-12        	33937651	        34.74 ns/op
+PASS
+ok  	fastmap/map	37.500s
+goos: linux
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+BenchmarkCache2Hit/_______1-12         	191161728	         6.301 ns/op
+BenchmarkCache2Hit/______10-12         	190364442	         6.262 ns/op
+BenchmarkCache2Hit/_____100-12         	183965293	         6.381 ns/op
+BenchmarkCache2Hit/____1000-12         	184759866	         6.495 ns/op
+BenchmarkCache2Hit/___10000-12         	165689388	         7.326 ns/op
+BenchmarkCache2Hit/__100000-12         	100000000	        10.64 ns/op
+BenchmarkCache2Hit/_1000000-12         	37173510	        31.77 ns/op
+BenchmarkCache2Hit/10000000-12         	27023305	        43.70 ns/op
+BenchmarkCache2Miss/_______1-12        	215687664	         5.554 ns/op
+BenchmarkCache2Miss/______10-12        	215355289	         5.564 ns/op
+BenchmarkCache2Miss/_____100-12        	215656226	         5.679 ns/op
+BenchmarkCache2Miss/____1000-12        	191074372	         6.024 ns/op
+BenchmarkCache2Miss/___10000-12        	149565770	         7.986 ns/op
+BenchmarkCache2Miss/__100000-12        	62498439	        19.05 ns/op
+BenchmarkCache2Miss/_1000000-12        	54399362	        21.46 ns/op
+BenchmarkCache2Miss/10000000-12        	34654364	        35.29 ns/op
+PASS
+ok  	fastmap/map	37.529s
+goos: linux
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+BenchmarkCache2Hit/_______1-12         	190930009	         6.293 ns/op
+BenchmarkCache2Hit/______10-12         	191280895	         6.318 ns/op
+BenchmarkCache2Hit/_____100-12         	191494190	         6.392 ns/op
+BenchmarkCache2Hit/____1000-12         	182116377	         6.485 ns/op
+BenchmarkCache2Hit/___10000-12         	165470708	         7.320 ns/op
+BenchmarkCache2Hit/__100000-12         	100000000	        10.63 ns/op
+BenchmarkCache2Hit/_1000000-12         	38323705	        31.70 ns/op
+BenchmarkCache2Hit/10000000-12         	27564693	        44.38 ns/op
+BenchmarkCache2Miss/_______1-12        	214289295	         5.581 ns/op
+BenchmarkCache2Miss/______10-12        	214635091	         5.569 ns/op
+BenchmarkCache2Miss/_____100-12        	207116787	         5.571 ns/op
+BenchmarkCache2Miss/____1000-12        	199506256	         6.192 ns/op
+BenchmarkCache2Miss/___10000-12        	152998447	         8.215 ns/op
+BenchmarkCache2Miss/__100000-12        	62371335	        19.02 ns/op
+BenchmarkCache2Miss/_1000000-12        	55043487	        21.61 ns/op
+BenchmarkCache2Miss/10000000-12        	34682878	        35.19 ns/op
+PASS
+ok  	fastmap/map	37.725s
+goos: linux
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+BenchmarkCache2Hit/_______1-12         	191003289	         6.296 ns/op
+BenchmarkCache2Hit/______10-12         	190000112	         6.317 ns/op
+BenchmarkCache2Hit/_____100-12         	191361396	         6.519 ns/op
+BenchmarkCache2Hit/____1000-12         	180419174	         6.488 ns/op
+BenchmarkCache2Hit/___10000-12         	166463696	         7.301 ns/op
+BenchmarkCache2Hit/__100000-12         	100000000	        10.48 ns/op
+BenchmarkCache2Hit/_1000000-12         	37339830	        31.91 ns/op
+BenchmarkCache2Hit/10000000-12         	27482995	        44.48 ns/op
+BenchmarkCache2Miss/_______1-12        	215505412	         5.559 ns/op
+BenchmarkCache2Miss/______10-12        	216189315	         5.561 ns/op
+BenchmarkCache2Miss/_____100-12        	207234226	         5.558 ns/op
+BenchmarkCache2Miss/____1000-12        	192113659	         6.305 ns/op
+BenchmarkCache2Miss/___10000-12        	151153984	         8.087 ns/op
+BenchmarkCache2Miss/__100000-12        	63389144	        19.08 ns/op
+BenchmarkCache2Miss/_1000000-12        	54961210	        21.17 ns/op
+BenchmarkCache2Miss/10000000-12        	34668008	        34.66 ns/op
+PASS
+ok  	fastmap/map	37.605s
+goos: linux
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+BenchmarkCache2Hit/_______1-12         	189317194	         6.298 ns/op
+BenchmarkCache2Hit/______10-12         	190527410	         6.271 ns/op
+BenchmarkCache2Hit/_____100-12         	191516168	         6.393 ns/op
+BenchmarkCache2Hit/____1000-12         	179007453	         6.668 ns/op
+BenchmarkCache2Hit/___10000-12         	164210612	         7.352 ns/op
+BenchmarkCache2Hit/__100000-12         	100000000	        10.36 ns/op
+BenchmarkCache2Hit/_1000000-12         	37518276	        31.03 ns/op
+BenchmarkCache2Hit/10000000-12         	26971621	        44.02 ns/op
+BenchmarkCache2Miss/_______1-12        	214383126	         5.560 ns/op
+BenchmarkCache2Miss/______10-12        	214627270	         5.559 ns/op
+BenchmarkCache2Miss/_____100-12        	205552676	         5.953 ns/op
+BenchmarkCache2Miss/____1000-12        	196479858	         6.302 ns/op
+BenchmarkCache2Miss/___10000-12        	151019427	         8.346 ns/op
+BenchmarkCache2Miss/__100000-12        	63382261	        18.97 ns/op
+BenchmarkCache2Miss/_1000000-12        	52598902	        21.20 ns/op
+BenchmarkCache2Miss/10000000-12        	34696173	        34.65 ns/op
+PASS
+ok  	fastmap/map	37.552s
+goos: linux
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+BenchmarkCache2Hit/_______1-12         	190466406	         6.285 ns/op
+BenchmarkCache2Hit/______10-12         	191320468	         6.300 ns/op
+BenchmarkCache2Hit/_____100-12         	191396702	         6.552 ns/op
+BenchmarkCache2Hit/____1000-12         	184027414	         6.531 ns/op
+BenchmarkCache2Hit/___10000-12         	161525719	         7.366 ns/op
+BenchmarkCache2Hit/__100000-12         	100000000	        10.36 ns/op
+BenchmarkCache2Hit/_1000000-12         	37432053	        31.76 ns/op
+BenchmarkCache2Hit/10000000-12         	27393274	        44.05 ns/op
+BenchmarkCache2Miss/_______1-12        	214822857	         5.582 ns/op
+BenchmarkCache2Miss/______10-12        	214429623	         5.558 ns/op
+BenchmarkCache2Miss/_____100-12        	215418711	         5.692 ns/op
+BenchmarkCache2Miss/____1000-12        	193460330	         6.085 ns/op
+BenchmarkCache2Miss/___10000-12        	152386968	         8.076 ns/op
+BenchmarkCache2Miss/__100000-12        	62565002	        19.28 ns/op
+BenchmarkCache2Miss/_1000000-12        	54283226	        21.11 ns/op
+BenchmarkCache2Miss/10000000-12        	34551195	        34.75 ns/op
+PASS
+ok  	fastmap/map	37.580s

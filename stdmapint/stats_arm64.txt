@@ -1,0 +1,220 @@
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+BenchmarkCache2Hit/_______1-8         	566752638	         2.078 ns/op
+BenchmarkCache2Hit/______10-8         	235562126	         5.117 ns/op
+BenchmarkCache2Hit/_____100-8         	214241064	         6.167 ns/op
+BenchmarkCache2Hit/____1000-8         	199531336	         5.881 ns/op
+BenchmarkCache2Hit/___10000-8         	160954315	         7.628 ns/op
+BenchmarkCache2Hit/__100000-8         	127923364	         9.588 ns/op
+BenchmarkCache2Hit/_1000000-8         	45192278	        26.30 ns/op
+BenchmarkCache2Hit/10000000-8         	31061895	        38.31 ns/op
+BenchmarkCache2Miss/_______1-8        	507360424	         2.362 ns/op
+BenchmarkCache2Miss/______10-8        	257975218	         4.649 ns/op
+BenchmarkCache2Miss/_____100-8        	218769578	         5.114 ns/op
+BenchmarkCache2Miss/____1000-8        	209363338	         6.040 ns/op
+BenchmarkCache2Miss/___10000-8        	124086510	         9.377 ns/op
+BenchmarkCache2Miss/__100000-8        	59304775	        20.18 ns/op
+BenchmarkCache2Miss/_1000000-8        	56174076	        21.29 ns/op
+BenchmarkCache2Miss/10000000-8        	35257347	        33.96 ns/op
+PASS
+ok  	fastmap/map	30.867s
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+BenchmarkCache2Hit/_______1-8         	562189477	         2.079 ns/op
+BenchmarkCache2Hit/______10-8         	235148378	         5.109 ns/op
+BenchmarkCache2Hit/_____100-8         	214604666	         6.117 ns/op
+BenchmarkCache2Hit/____1000-8         	202646848	         5.962 ns/op
+BenchmarkCache2Hit/___10000-8         	157012513	         7.660 ns/op
+BenchmarkCache2Hit/__100000-8         	127822218	         9.408 ns/op
+BenchmarkCache2Hit/_1000000-8         	45423718	        26.57 ns/op
+BenchmarkCache2Hit/10000000-8         	31336945	        38.15 ns/op
+BenchmarkCache2Miss/_______1-8        	509001549	         2.359 ns/op
+BenchmarkCache2Miss/______10-8        	254655081	         4.609 ns/op
+BenchmarkCache2Miss/_____100-8        	200845180	         7.075 ns/op
+BenchmarkCache2Miss/____1000-8        	192023413	         6.025 ns/op
+BenchmarkCache2Miss/___10000-8        	129506400	         9.192 ns/op
+BenchmarkCache2Miss/__100000-8        	59820290	        20.28 ns/op
+BenchmarkCache2Miss/_1000000-8        	56238138	        21.22 ns/op
+BenchmarkCache2Miss/10000000-8        	35313417	        33.86 ns/op
+PASS
+ok  	fastmap/map	31.138s
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+BenchmarkCache2Hit/_______1-8         	564576805	         2.080 ns/op
+BenchmarkCache2Hit/______10-8         	235182924	         5.103 ns/op
+BenchmarkCache2Hit/_____100-8         	209994390	         5.296 ns/op
+BenchmarkCache2Hit/____1000-8         	198733994	         6.061 ns/op
+BenchmarkCache2Hit/___10000-8         	157942941	         7.622 ns/op
+BenchmarkCache2Hit/__100000-8         	126182688	         9.402 ns/op
+BenchmarkCache2Hit/_1000000-8         	45544974	        26.40 ns/op
+BenchmarkCache2Hit/10000000-8         	31301965	        38.06 ns/op
+BenchmarkCache2Miss/_______1-8        	507960606	         2.358 ns/op
+BenchmarkCache2Miss/______10-8        	255003920	         4.706 ns/op
+BenchmarkCache2Miss/_____100-8        	203113146	         6.626 ns/op
+BenchmarkCache2Miss/____1000-8        	195341643	         5.899 ns/op
+BenchmarkCache2Miss/___10000-8        	131144924	         9.401 ns/op
+BenchmarkCache2Miss/__100000-8        	60293302	        20.20 ns/op
+BenchmarkCache2Miss/_1000000-8        	56105571	        21.25 ns/op
+BenchmarkCache2Miss/10000000-8        	35344708	        33.91 ns/op
+PASS
+ok  	fastmap/map	30.908s
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+BenchmarkCache2Hit/_______1-8         	567752487	         2.115 ns/op
+BenchmarkCache2Hit/______10-8         	235619634	         5.082 ns/op
+BenchmarkCache2Hit/_____100-8         	200585150	         6.196 ns/op
+BenchmarkCache2Hit/____1000-8         	204864420	         5.930 ns/op
+BenchmarkCache2Hit/___10000-8         	156628305	         7.673 ns/op
+BenchmarkCache2Hit/__100000-8         	128733937	         9.368 ns/op
+BenchmarkCache2Hit/_1000000-8         	45522081	        26.40 ns/op
+BenchmarkCache2Hit/10000000-8         	31036890	        38.57 ns/op
+BenchmarkCache2Miss/_______1-8        	506243758	         2.382 ns/op
+BenchmarkCache2Miss/______10-8        	257788248	         4.661 ns/op
+BenchmarkCache2Miss/_____100-8        	202450010	         6.433 ns/op
+BenchmarkCache2Miss/____1000-8        	201332217	         5.931 ns/op
+BenchmarkCache2Miss/___10000-8        	130686388	         9.326 ns/op
+BenchmarkCache2Miss/__100000-8        	59278286	        20.14 ns/op
+BenchmarkCache2Miss/_1000000-8        	56352136	        21.26 ns/op
+BenchmarkCache2Miss/10000000-8        	35184424	        33.92 ns/op
+PASS
+ok  	fastmap/map	31.045s
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+BenchmarkCache2Hit/_______1-8         	566189073	         2.080 ns/op
+BenchmarkCache2Hit/______10-8         	235046665	         5.175 ns/op
+BenchmarkCache2Hit/_____100-8         	203035922	         6.449 ns/op
+BenchmarkCache2Hit/____1000-8         	199299268	         6.026 ns/op
+BenchmarkCache2Hit/___10000-8         	158278587	         7.624 ns/op
+BenchmarkCache2Hit/__100000-8         	127334577	         9.397 ns/op
+BenchmarkCache2Hit/_1000000-8         	45420422	        26.35 ns/op
+BenchmarkCache2Hit/10000000-8         	31194421	        38.11 ns/op
+BenchmarkCache2Miss/_______1-8        	507814702	         2.361 ns/op
+BenchmarkCache2Miss/______10-8        	258976479	         4.710 ns/op
+BenchmarkCache2Miss/_____100-8        	208617087	         5.483 ns/op
+BenchmarkCache2Miss/____1000-8        	204330573	         6.100 ns/op
+BenchmarkCache2Miss/___10000-8        	125017699	         9.260 ns/op
+BenchmarkCache2Miss/__100000-8        	59493805	        20.24 ns/op
+BenchmarkCache2Miss/_1000000-8        	56051192	        21.19 ns/op
+BenchmarkCache2Miss/10000000-8        	35183521	        34.00 ns/op
+PASS
+ok  	fastmap/map	30.951s
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+BenchmarkCache2Hit/_______1-8         	563365514	         2.082 ns/op
+BenchmarkCache2Hit/______10-8         	235354820	         5.119 ns/op
+BenchmarkCache2Hit/_____100-8         	226054401	         6.605 ns/op
+BenchmarkCache2Hit/____1000-8         	205849969	         6.013 ns/op
+BenchmarkCache2Hit/___10000-8         	158498236	         7.583 ns/op
+BenchmarkCache2Hit/__100000-8         	126863802	         9.389 ns/op
+BenchmarkCache2Hit/_1000000-8         	45456697	        26.34 ns/op
+BenchmarkCache2Hit/10000000-8         	31132981	        38.76 ns/op
+BenchmarkCache2Miss/_______1-8        	502064127	         2.361 ns/op
+BenchmarkCache2Miss/______10-8        	254970417	         4.644 ns/op
+BenchmarkCache2Miss/_____100-8        	210448658	         5.444 ns/op
+BenchmarkCache2Miss/____1000-8        	203830700	         6.042 ns/op
+BenchmarkCache2Miss/___10000-8        	128330533	         9.356 ns/op
+BenchmarkCache2Miss/__100000-8        	57671282	        20.25 ns/op
+BenchmarkCache2Miss/_1000000-8        	56169584	        21.22 ns/op
+BenchmarkCache2Miss/10000000-8        	35008174	        33.98 ns/op
+PASS
+ok  	fastmap/map	31.031s
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+BenchmarkCache2Hit/_______1-8         	560280326	         2.081 ns/op
+BenchmarkCache2Hit/______10-8         	225865364	         5.105 ns/op
+BenchmarkCache2Hit/_____100-8         	226273959	         6.031 ns/op
+BenchmarkCache2Hit/____1000-8         	199630710	         5.936 ns/op
+BenchmarkCache2Hit/___10000-8         	159117111	         7.604 ns/op
+BenchmarkCache2Hit/__100000-8         	127673869	         9.452 ns/op
+BenchmarkCache2Hit/_1000000-8         	45240482	        26.36 ns/op
+BenchmarkCache2Hit/10000000-8         	31279017	        38.10 ns/op
+BenchmarkCache2Miss/_______1-8        	507927369	         2.399 ns/op
+BenchmarkCache2Miss/______10-8        	254943062	         4.630 ns/op
+BenchmarkCache2Miss/_____100-8        	206244598	         5.480 ns/op
+BenchmarkCache2Miss/____1000-8        	212182314	         6.021 ns/op
+BenchmarkCache2Miss/___10000-8        	129123900	         9.099 ns/op
+BenchmarkCache2Miss/__100000-8        	59500321	        20.37 ns/op
+BenchmarkCache2Miss/_1000000-8        	55448701	        21.23 ns/op
+BenchmarkCache2Miss/10000000-8        	35133004	        34.09 ns/op
+PASS
+ok  	fastmap/map	31.974s
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+BenchmarkCache2Hit/_______1-8         	564920439	         2.087 ns/op
+BenchmarkCache2Hit/______10-8         	235449082	         5.084 ns/op
+BenchmarkCache2Hit/_____100-8         	226557867	         6.075 ns/op
+BenchmarkCache2Hit/____1000-8         	199107375	         5.979 ns/op
+BenchmarkCache2Hit/___10000-8         	155667184	         7.535 ns/op
+BenchmarkCache2Hit/__100000-8         	128752578	         9.484 ns/op
+BenchmarkCache2Hit/_1000000-8         	40553955	        26.37 ns/op
+BenchmarkCache2Hit/10000000-8         	31229498	        38.03 ns/op
+BenchmarkCache2Miss/_______1-8        	508476820	         2.361 ns/op
+BenchmarkCache2Miss/______10-8        	254975360	         4.659 ns/op
+BenchmarkCache2Miss/_____100-8        	198678498	         6.102 ns/op
+BenchmarkCache2Miss/____1000-8        	195952384	         6.869 ns/op
+BenchmarkCache2Miss/___10000-8        	130610598	         9.369 ns/op
+BenchmarkCache2Miss/__100000-8        	58849852	        20.07 ns/op
+BenchmarkCache2Miss/_1000000-8        	55124995	        21.36 ns/op
+BenchmarkCache2Miss/10000000-8        	35188078	        33.94 ns/op
+PASS
+ok  	fastmap/map	30.974s
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+BenchmarkCache2Hit/_______1-8         	560925027	         2.085 ns/op
+BenchmarkCache2Hit/______10-8         	235111099	         5.111 ns/op
+BenchmarkCache2Hit/_____100-8         	204822531	         6.162 ns/op
+BenchmarkCache2Hit/____1000-8         	196692370	         5.925 ns/op
+BenchmarkCache2Hit/___10000-8         	159622165	         7.625 ns/op
+BenchmarkCache2Hit/__100000-8         	128608443	         9.440 ns/op
+BenchmarkCache2Hit/_1000000-8         	45580078	        26.36 ns/op
+BenchmarkCache2Hit/10000000-8         	31206792	        38.27 ns/op
+BenchmarkCache2Miss/_______1-8        	508101482	         2.361 ns/op
+BenchmarkCache2Miss/______10-8        	255111644	         4.666 ns/op
+BenchmarkCache2Miss/_____100-8        	203687103	         6.712 ns/op
+BenchmarkCache2Miss/____1000-8        	194757414	         6.041 ns/op
+BenchmarkCache2Miss/___10000-8        	132331686	         9.471 ns/op
+BenchmarkCache2Miss/__100000-8        	59555442	        20.24 ns/op
+BenchmarkCache2Miss/_1000000-8        	56317095	        21.27 ns/op
+BenchmarkCache2Miss/10000000-8        	34982617	        34.20 ns/op
+PASS
+ok  	fastmap/map	31.116s
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+BenchmarkCache2Hit/_______1-8         	563591296	         2.077 ns/op
+BenchmarkCache2Hit/______10-8         	234801111	         5.095 ns/op
+BenchmarkCache2Hit/_____100-8         	189850424	         5.731 ns/op
+BenchmarkCache2Hit/____1000-8         	199316786	         5.879 ns/op
+BenchmarkCache2Hit/___10000-8         	158075726	         7.703 ns/op
+BenchmarkCache2Hit/__100000-8         	128829150	         9.442 ns/op
+BenchmarkCache2Hit/_1000000-8         	45587508	        26.41 ns/op
+BenchmarkCache2Hit/10000000-8         	31101645	        38.10 ns/op
+BenchmarkCache2Miss/_______1-8        	508020818	         2.358 ns/op
+BenchmarkCache2Miss/______10-8        	254693456	         4.706 ns/op
+BenchmarkCache2Miss/_____100-8        	207593031	         6.059 ns/op
+BenchmarkCache2Miss/____1000-8        	198781441	         5.866 ns/op
+BenchmarkCache2Miss/___10000-8        	123347131	         9.146 ns/op
+BenchmarkCache2Miss/__100000-8        	58681620	        20.01 ns/op
+BenchmarkCache2Miss/_1000000-8        	56331304	        21.23 ns/op
+BenchmarkCache2Miss/10000000-8        	35211998	        34.00 ns/op
+PASS
+ok  	fastmap/map	30.741s
