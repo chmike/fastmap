@@ -69,6 +69,7 @@ geomean                             17.86n         18.71n         +4.75%
 
 The following are the benchmarks of the exacte same map, but with int keys. It uses an xxh3 hash for integers which is currently not provided in the cheebo package.
 
+```text
 goos: darwin
 goarch: arm64
 pkg: fastmap/map
@@ -92,7 +93,9 @@ Cache2Miss/__100000-8                 15.74n ± 1%   20.22n ±  1%  +28.50% (p=0
 Cache2Miss/_1000000-8                 14.85n ± 0%   21.24n ±  0%  +42.98% (p=0.000 n=10)
 Cache2Miss/10000000-8                 24.61n ± 1%   33.97n ±  0%  +38.06% (p=0.000 n=10)
 geomean                               7.088n        8.897n        +25.52%
+```
 
+```text
 goarch: amd64
 pkg: fastmap/map
 cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
@@ -115,6 +118,7 @@ Cache2Miss/__100000-12                 18.99n ± 1%    23.98n ±  1%  +26.24% (p
 Cache2Miss/_1000000-12                 21.39n ± 1%    30.21n ±  2%  +41.27% (p=0.000 n=10)
 Cache2Miss/10000000-12                 34.72n ± 2%    47.26n ±  4%  +36.14% (p=0.000 n=10)
 geomean                                10.50n         11.00n         +4.77%
+```
 
 ## Contributions
 
