@@ -98,7 +98,7 @@ func (t *table) get(key *string, hash uint) (value int, ok bool) {
 
 // swap swaps the value associated with the key if found in the table. hash is the hash of key.
 // Returns the default value and false of the key is not found in the table.
-func (t *table) swap(key string, value int, hash uint) (oldValue int, ok bool) {
+func (t *table) swap(key *string, value int, hash uint) (oldValue int, ok bool) {
 	pattern := MakePattern(H2(hash))
 	var pos uint32
 	offset := makeOffset(H1(hash))
@@ -106,7 +106,7 @@ func (t *table) swap(key string, value int, hash uint) (oldValue int, ok bool) {
 	for {
 		g := (*Group)(unsafe.Add(basePtr, offset))
 		for set := g.header.Find(pattern); !set.Empty(); set = set.Next() {
-			if item := &g.item[set.Pos()]; item.key == key {
+			if item := &g.item[set.Pos()]; item.key == *key {
 				oldValue, item.value = item.value, value
 				return oldValue, true
 			}

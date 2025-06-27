@@ -79,7 +79,7 @@ func (c *Cache) Get(key string) (value int, ok bool) {
 func (c *Cache) Add(key string, value int) (oldValue int, ok bool) {
 	hash := c.seed.Hash(key)
 	t := c.table(hash)
-	if oldValue, ok = t.swap(key, value, hash); ok {
+	if oldValue, ok = t.swap(&key, value, hash); ok {
 		return
 	}
 

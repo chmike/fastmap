@@ -6,14 +6,6 @@ import (
 	"testing"
 )
 
-// func str(i int) string {
-// 	return fmt.Sprintf("test string %d", i)
-// }
-
-// func strB(i int) string {
-// 	return fmt.Sprintf("test-string %d", i)
-// }
-
 func str(i int) string {
 	return fmt.Sprintf("%7d ", i)
 }
