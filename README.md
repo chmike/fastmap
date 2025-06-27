@@ -1,18 +1,10 @@
 # Map faster than go map
 
-This code is the result of a successful attempt to implement a map faster than go map of go 1.24.3. It is a map of string keys with int values. I have also a fast map with int keys but it isn’t published. I focussed on string keys as it was closer to my use case.
+This prove of concept code is the result of a successful attempt to implement a map faster than go map from go 1.24.3. As the standard map, my map is a swiss table but it is using 8 bit top hashes and an exact match. It doesn’t move items and thus uses tombstones for deleted items. Beside the difference of using 8 bit top hashes and an exact match that reduces the false positive, it uses xxh3 as hash function instead of the maphash used by the go map. This maphash function is fast on intel processor, and not so fast on arm64 processors.
 
-My hash table is in altmap. stdmap is just a place holder for the standard go map benchmark. The struct type is called Cache as it was initially designed to be used for a cache.
+The go map and my table use an extensible hash table (directory), but the directory adds an overhead that may be removed when the map is used for a Cache as its size is constant at full regime. I kept the directory in this fast map to display some possible optimizations. The table, made of 256 groups of 8 items, split when reaching 90% load. This size and load threshold may be modified by the constant parameters `tableSizeLog2` and `maxUsed`. A table rehash is also triggered when the number of tombstones reach `maxTombstones` set to 15% of the capacity in this implementation.
 
-My map is a swiss table like the go map. It is an extensible hash table of 256 group tables where each group has room for 8 items as it is implemented in pure go without simd instructions. Use of simd instructions should speed things up.
-
-The hash function I use is xxh3. On amd64 xxh3 uses assembly with simd instructions for long strings. On arm64 there is currently no assembly, and it doesn’t use simd. It is fast for small strings and 4 times slower than maphash for long strings. The benchmarks are performed with short (8 byte) strings.
-
-The main difference between my map and Go map is that go map uses 7 bit top hashes and I use 8 bit top hashes. It have also additional minor optimizations. On amd64 architectures, go map uses inlined simd instructions which I can't.
-
-My tables split when they reach 90% load. The table size can be adjusted with the constant parameter `tableSizeLog2`, and the maximum load is adjusted with the `maxUsed` constant. A table rehash is also triggered when the number of tombstones reach 15%. This may be adjusted with the `maxTombstones` constant. The table rehash removes all tombstones.
-
-Item deletion replaces them with tombstones. Items aren't thus moved in the groups or table. The hash table should then be compatible with the go map iteration policy. Iteration code is not exposed as it seam to be a tricky operation.
+The hash table is named Cache as it was initially designed to be used for a cache.
 
 ## Benchmarking
 
@@ -74,6 +66,55 @@ Cache2Miss/_1000000-12              62.06n ± 1%    64.69n ±  4%   +4.23% (p=0.
 Cache2Miss/10000000-12              81.04n ± 1%    84.81n ±  2%   +4.66% (p=0.000 n=10)
 geomean                             17.86n         18.71n         +4.75%
 ```
+
+The following are the benchmarks of the exacte same map, but with int keys. It uses an xxh3 hash for integers which is currently not provided in the cheebo package.
+
+goos: darwin
+goarch: arm64
+pkg: fastmap/map
+cpu: Apple M2
+                      │ altmapint/stats_arm64.txt │      stdmapint/stats_arm64.txt       │
+                      │          sec/op           │    sec/op     vs base                │
+Cache2Hit/_______1-8                  3.515n ± 1%   2.080n ±  0%  -40.81% (p=0.000 n=10)
+Cache2Hit/______10-8                  4.330n ± 1%   5.107n ±  0%  +17.94% (p=0.000 n=10)
+Cache2Hit/_____100-8                  4.427n ± 3%   6.139n ±  7%  +38.68% (p=0.000 n=10)
+Cache2Hit/____1000-8                  4.401n ± 6%   5.949n ±  1%  +35.17% (p=0.000 n=10)
+Cache2Hit/___10000-8                  5.139n ± 1%   7.624n ±  1%  +48.35% (p=0.000 n=10)
+Cache2Hit/__100000-8                  6.805n ± 1%   9.424n ±  1%  +38.49% (p=0.000 n=10)
+Cache2Hit/_1000000-8                  18.26n ± 1%   26.37n ±  0%  +44.39% (p=0.000 n=10)
+Cache2Hit/10000000-8                  28.26n ± 3%   38.13n ±  1%  +34.95% (p=0.000 n=10)
+Cache2Miss/_______1-8                 3.013n ± 1%   2.361n ±  1%  -21.64% (p=0.000 n=10)
+Cache2Miss/______10-8                 3.751n ± 0%   4.660n ±  1%  +24.23% (p=0.001 n=10)
+Cache2Miss/_____100-8                 3.880n ± 4%   6.081n ± 10%  +56.69% (p=0.000 n=10)
+Cache2Miss/____1000-8                 4.575n ± 7%   6.033n ±  2%  +31.86% (p=0.000 n=10)
+Cache2Miss/___10000-8                 6.577n ± 3%   9.341n ±  2%  +42.03% (p=0.000 n=10)
+Cache2Miss/__100000-8                 15.74n ± 1%   20.22n ±  1%  +28.50% (p=0.000 n=10)
+Cache2Miss/_1000000-8                 14.85n ± 0%   21.24n ±  0%  +42.98% (p=0.000 n=10)
+Cache2Miss/10000000-8                 24.61n ± 1%   33.97n ±  0%  +38.06% (p=0.000 n=10)
+geomean                               7.088n        8.897n        +25.52%
+
+goarch: amd64
+pkg: fastmap/map
+cpu: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz
+                       │ altmapint/stats_amd64.txt │       stdmapint/stats_amd64.txt       │
+                       │          sec/op           │    sec/op      vs base                │
+Cache2Hit/_______1-12                  6.288n ± 0%    2.988n ±  1%  -52.47% (p=0.000 n=10)
+Cache2Hit/______10-12                  6.276n ± 1%    5.782n ±  2%   -7.87% (p=0.000 n=10)
+Cache2Hit/_____100-12                  6.393n ± 2%    6.440n ±  5%        ~ (p=0.579 n=10)
+Cache2Hit/____1000-12                  6.556n ± 2%    6.960n ±  3%   +6.17% (p=0.000 n=10)
+Cache2Hit/___10000-12                  7.303n ± 1%    8.101n ±  1%  +10.92% (p=0.000 n=10)
+Cache2Hit/__100000-12                  10.45n ± 2%    12.21n ±  1%  +16.95% (p=0.000 n=10)
+Cache2Hit/_1000000-12                  31.72n ± 2%    34.54n ±  2%   +8.87% (p=0.000 n=10)
+Cache2Hit/10000000-12                  44.18n ± 1%    47.08n ±  3%   +6.55% (p=0.000 n=10)
+Cache2Miss/_______1-12                 5.562n ± 0%    3.214n ±  0%  -42.22% (p=0.000 n=10)
+Cache2Miss/______10-12                 5.562n ± 0%    5.748n ±  2%   +3.34% (p=0.000 n=10)
+Cache2Miss/_____100-12                 5.679n ± 2%    7.580n ± 13%  +33.47% (p=0.000 n=10)
+Cache2Miss/____1000-12                 6.204n ± 2%    7.530n ±  3%  +21.39% (p=0.000 n=10)
+Cache2Miss/___10000-12                 8.021n ± 2%   10.210n ±  1%  +27.28% (p=0.000 n=10)
+Cache2Miss/__100000-12                 18.99n ± 1%    23.98n ±  1%  +26.24% (p=0.000 n=10)
+Cache2Miss/_1000000-12                 21.39n ± 1%    30.21n ±  2%  +41.27% (p=0.000 n=10)
+Cache2Miss/10000000-12                 34.72n ± 2%    47.26n ±  4%  +36.14% (p=0.000 n=10)
+geomean                                10.50n         11.00n         +4.77%
 
 ## Contributions
 
